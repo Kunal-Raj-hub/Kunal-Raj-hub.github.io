@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Mess Hall</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide-react@0.292.0/dist/lucide-react.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://placehold.co/1600x800/e2e8f0/4a5568?text=Clean+Dining+Hall');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-4 lg:px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M17 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M14 22V4a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v18c0 1.1.9 2 2 2h5a2 2 0 0 0 2-2z"/></svg>
+                <a href="#home" class="text-xl font-bold text-gray-900">Community Mess</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#today-menu" class="text-gray-600 hover:text-indigo-600 transition-colors">Today's Menu</a>
+                <a href="#weekly-menu" class="text-gray-600 hover:text-indigo-600 transition-colors">Weekly Menu</a>
+                <a href="#notices" class="text-gray-600 hover:text-indigo-600 transition-colors">Notices</a>
+                <a href="#contact" class="text-gray-600 hover:text-indigo-600 transition-colors">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-600 hover:bg-gray-100">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 space-y-2">
+            <a href="#today-menu" class="block text-gray-600 hover:text-indigo-600 transition-colors py-2">Today's Menu</a>
+            <a href="#weekly-menu" class="block text-gray-600 hover:text-indigo-600 transition-colors py-2">Weekly Menu</a>
+            <a href="#notices" class="block text-gray-600 hover:text-indigo-600 transition-colors py-2">Notices</a>
+            <a href="#contact" class="block text-gray-600 hover:text-indigo-600 transition-colors py-2">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-bg text-white">
+            <div class="container mx-auto px-4 lg:px-8 py-24 md:py-32 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Nourishing Our Community</h1>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto text-gray-200">
+                    Serving fresh, delicious, and wholesome meals every day. Welcome to your home away from home.
+                </p>
+            </div>
+        </section>
+
+        <!-- Today's Menu Section -->
+        <section id="today-menu" class="py-16 lg:py-24 bg-white">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Today's Menu</h2>
+                    <p class="text-lg text-gray-600 mt-2">Here's what we're serving today. Enjoy your meal!</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="today-menu-cards">
+                    <!-- Breakfast -->
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-yellow-500"><path d="M10 22v-6.57"/><path d="M12 22v-6.57"/><path d="M14 22v-6.57"/><path d="M5 11h14v-1a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v1Z"/><path d="M7 8v2"/><path d="M17 8v2"/><path d="M5 4h14a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/></svg>
+                            <h3 class="text-xl font-semibold ml-3">Breakfast</h3>
+                        </div>
+                        <p class="text-sm text-gray-500 mb-4">7:30 AM - 9:30 AM</p>
+                        <ul class="space-y-2 text-gray-700" id="today-breakfast">
+                            <li>- Loading...</li>
+                        </ul>
+                    </div>
+                    <!-- Lunch -->
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border border-gray-200">
+                         <div class="flex items-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-orange-500"><path d="M12 3v12"/><path d="m15 11-3 3-3-3"/><path d="M3 14h18a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2z"/></svg>
+                            <h3 class="text-xl font-semibold ml-3">Lunch</h3>
+                        </div>
+                        <p class="text-sm text-gray-500 mb-4">12:30 PM - 2:30 PM</p>
+                        <ul class="space-y-2 text-gray-700" id="today-lunch">
+                            <li>- Loading...</li>
+                        </ul>
+                    </div>
+                    <!-- Snacks -->
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border border-gray-200">
+                         <div class="flex items-center mb-4">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-cyan-500"><path d="M16 5c-1.4 1.4-1.4 3.6 0 5s3.6 1.4 5 0"/><path d="M21.1 11.1c.9-.9.9-2.5 0-3.4s-2.5-.9-3.4 0"/><path d="m4 6 1.4-1.4c.8-.8 2-.8 2.8 0L10 6"/><path d="m8 8 1.4-1.4c.8-.8 2-.8 2.8 0L14 8"/><path d="M14.8 14.8c.8.8 2 .8 2.8 0l1.4-1.4"/><path d="M10 12 8.6 10.6c-.8-.8-2-.8-2.8 0L4 12"/><path d="M22 17H2c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2Z"/></svg>
+                            <h3 class="text-xl font-semibold ml-3">Snacks</h3>
+                        </div>
+                        <p class="text-sm text-gray-500 mb-4">5:00 PM - 6:00 PM</p>
+                        <ul class="space-y-2 text-gray-700" id="today-snacks">
+                           <li>- Loading...</li>
+                        </ul>
+                    </div>
+                    <!-- Dinner -->
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border border-gray-200">
+                         <div class="flex items-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-indigo-500"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/><path d="M18.88 3.12A2.29 2.29 0 0 0 17.17 2H17a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h.17a2.29 2.29 0 0 0 1.71-.78l1.4-1.82a2.29 2.29 0 0 0 0-2.8Z"/><path d="M5.12 3.12A2.29 2.29 0 0 1 6.83 2H7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6.83a2.29 2.29 0 0 1-1.71-.78l-1.4-1.82a2.29 2.29 0 0 1 0-2.8Z"/><path d="M18 16v2a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-2"/></svg>
+                            <h3 class="text-xl font-semibold ml-3">Dinner</h3>
+                        </div>
+                        <p class="text-sm text-gray-500 mb-4">8:00 PM - 10:00 PM</p>
+                        <ul class="space-y-2 text-gray-700" id="today-dinner">
+                            <li>- Loading...</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Weekly Menu Section -->
+        <section id="weekly-menu" class="py-16 lg:py-24">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Weekly Menu</h2>
+                    <p class="text-lg text-gray-600 mt-2">Plan your week with our detailed menu. Rice and Roti are served with lunch and dinner every day.</p>
+                </div>
+                
+                <div class="overflow-x-auto bg-white rounded-lg shadow-lg">
+                    <table class="w-full text-sm text-left text-gray-500" id="weekly-menu-table">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-100">
+                            <tr>
+                                <th scope="col" class="px-6 py-4 rounded-tl-lg">Meal</th>
+                                <th scope="col" class="px-6 py-4">Monday</th>
+                                <th scope="col" class="px-6 py-4">Tuesday</th>
+                                <th scope="col" class="px-6 py-4">Wednesday</th>
+                                <th scope="col" class="px-6 py-4">Thursday</th>
+                                <th scope="col" class="px-6 py-4">Friday</th>
+                                <th scope="col" class="px-6 py-4">Saturday</th>
+                                <th scope="col" class="px-6 py-4 rounded-tr-lg">Sunday</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-white border-b" data-meal="Breakfast">
+                                <th scope="row" class="px-6 py-4 font-bold text-gray-900 whitespace-nowrap bg-gray-50">Breakfast</th>
+                                <td class="px-6 py-4">Poha, Jalebi</td>
+                                <td class="px-6 py-4">---</td>
+                                <td class="px-6 py-4">Uttapam, Chutney, Sambar</td>
+                                <td class="px-6 py-4">---</td>
+                                <td class="px-6 py-4">Sevai Upma, Dalia</td>
+                                <td class="px-6 py-4">Aalu Paratha, Chutney</td>
+                                <td class="px-6 py-4">Dosa, Sambar, Chutney</td>
+                            </tr>
+                            <tr class="bg-white border-b" data-meal="Lunch">
+                                <th scope="row" class="px-6 py-4 font-bold text-gray-900 whitespace-nowrap bg-gray-50">Lunch</th>
+                                <td class="px-6 py-4">Masoor Dal, Bhindi, Lauki Kofta, Salad, Papaya</td>
+                                <td class="px-6 py-4">Kadhi Pakodi, Kaala Chana, Mushroom Masala, Apple</td>
+                                <td class="px-6 py-4">Rajma, Suran Curry, Soyabean Chilli, Fruit Lassi</td>
+                                <td class="px-6 py-4">Lobia Dal, Sarso-Baingan, Kashmiri Dum Aalo, Curd, Banana</td>
+                                <td class="px-6 py-4">Dalma, Aloo Poshto, Dhokla Curry, Mungfali Salad, Pear</td>
+                                <td class="px-6 py-4">Dal Tadka, Khichdi, Pakodi, Chutney, Banana</td>
+                                <td class="px-6 py-4">Chilli Potato, Palak-Corn, Tomato Rice, Papaya</td>
+                            </tr>
+                            <tr class="bg-white border-b" data-meal="Snacks">
+                                <th scope="row" class="px-6 py-4 font-bold text-gray-900 whitespace-nowrap bg-gray-50">Snacks</th>
+                                <td class="px-6 py-4">Chicken/Paneer Roll</td>
+                                <td class="px-6 py-4">Cheese Veg Sandwich</td>
+                                <td class="px-6 py-4">Sweet Corn Chat</td>
+                                <td class="px-6 py-4">Dhokla, Chutney</td>
+                                <td class="px-6 py-4">Bhelpuri</td>
+                                <td class="px-6 py-4">Dahiwada</td>
+                                <td class="px-6 py-4">Panipuri</td>
+                            </tr>
+                            <tr class="bg-white" data-meal="Dinner">
+                                <th scope="row" class="px-6 py-4 font-bold text-gray-900 whitespace-nowrap bg-gray-50 rounded-bl-lg">Dinner</th>
+                                <td class="px-6 py-4">Mix Dal, Palak-Puri, Stuffed Shimla, Gulab Jamun</td>
+                                <td class="px-6 py-4">Malai Kofta, Mix Veg, Fruit Custurd</td>
+                                <td class="px-6 py-4">Veg Korma, Sarso Bhindi, Nariyal Barfi</td>
+                                <td class="px-6 py-4">Dal Makhani, Veg Biryani, Palak Corn, Milk Cake</td>
+                                <td class="px-6 py-4">Loochi, Chana Dal, Masala Dum Aloo, Kheer</td>
+                                <td class="px-6 py-4">Veg-Manchurian, Fried Aloo Poshto, Lauki Barfi</td>
+                                <td class="px-6 py-4">Chole Bhatura, Aloo Shimla Mirch, Rasmalai</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Notices Section -->
+        <section id="notices" class="py-16 lg:py-24 bg-white">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Announcements & Notices</h2>
+                    <p class="text-lg text-gray-600 mt-2">Stay updated with the latest information from the mess.</p>
+                </div>
+                <div class="max-w-3xl mx-auto space-y-6">
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+                        <h4 class="font-semibold text-lg text-blue-800">Special Dinner on Sunday</h4>
+                        <p class="text-blue-700 mt-1">Join us for a special dinner this Sunday featuring a variety of chaat, main courses, and desserts. Don't miss out!</p>
+                        <p class="text-xs text-blue-600 mt-2">Posted: Oct 1, 2025</p>
+                    </div>
+                    <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-r-lg">
+                        <h4 class="font-semibold text-lg text-yellow-800">Mess Timings for Diwali</h4>
+                        <p class="text-yellow-700 mt-1">Please note that mess timings will be adjusted during the Diwali holidays. Breakfast: 8-10 AM, Lunch: 1-3 PM, Dinner: 8-10 PM.</p>
+                        <p class="text-xs text-yellow-600 mt-2">Posted: Sep 30, 2025</p>
+                    </div>
+                    <div class="bg-gray-100 border-l-4 border-gray-400 p-6 rounded-r-lg">
+                        <h4 class="font-semibold text-lg text-gray-800">Feedback and Suggestions</h4>
+                        <p class="text-gray-700 mt-1">We value your feedback. Please use the contact form below or speak to the mess manager for any suggestions to help us improve.</p>
+                        <p class="text-xs text-gray-600 mt-2">Posted: Sep 28, 2025</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 lg:py-24">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Get in Touch</h2>
+                    <p class="text-lg text-gray-600 mt-2">Have questions or feedback? We're here to help.</p>
+                </div>
+
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 bg-white p-8 md:p-12 rounded-xl shadow-lg">
+                    <!-- Contact Info -->
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-semibold">Contact Information</h3>
+                        <p class="text-gray-600">
+                            Feel free to reach out to our mess manager for any queries, special dietary requests, or issues.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-indigo-600"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                <span class="text-gray-700">Mr. Suresh Sharma (Mess Manager)</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-indigo-600"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                <span class="text-gray-700">+91 12345 67890</span>
+                            </div>
+                             <div class="flex items-center space-x-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-indigo-600"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                                <span class="text-gray-700">manager@communitymess.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Feedback Form -->
+                    <form class="space-y-4">
+                        <h3 class="text-2xl font-semibold">Send a Message</h3>
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Your Name</label>
+                            <input type="text" id="name" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                            <input type="email" id="email" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                            <textarea id="message" rows="4" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-indigo-600 text-white font-semibold py-3 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors">
+                            Submit Feedback
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-4 lg:px-8 py-8 text-center">
+            <p>&copy; 2025 Community Mess Hall. All Rights Reserved.</p>
+            <p class="text-sm text-gray-400 mt-1">Designed with care for our community.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
+        for (let link of mobileMenuLinks) {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        }
+
+        // --- SCRIPT TO POPULATE TODAY'S MENU ---
+        document.addEventListener('DOMContentLoaded', function() {
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const todayIndex = new Date().getDay(); // Sunday is 0, Monday is 1, etc.
+            const todayName = days[todayIndex];
+
+            const weeklyMenuTable = document.getElementById('weekly-menu-table');
+            const tableHeader = weeklyMenuTable.querySelector('thead tr');
+            const tableBody = weeklyMenuTable.querySelector('tbody');
+
+            // Find the column index for today
+            let dayColumnIndex = -1;
+            Array.from(tableHeader.children).forEach((th, index) => {
+                if (th.textContent === todayName) {
+                    dayColumnIndex = index;
+                    // Highlight today's column header
+                    th.classList.add('bg-indigo-200', 'text-indigo-800');
+                }
+            });
+            
+            if (dayColumnIndex === -1) return; // Exit if day not found in header
+
+            // Update today's menu cards
+            const meals = ['Breakfast', 'Lunch', 'Snacks', 'Dinner'];
+            meals.forEach(meal => {
+                const mealRow = tableBody.querySelector(`tr[data-meal="${meal}"]`);
+                if (mealRow) {
+                    const menuCell = mealRow.children[dayColumnIndex];
+                    const menuItems = menuCell.innerHTML.split(',').map(item => item.trim());
+                    
+                    const targetUl = document.getElementById(`today-${meal.toLowerCase()}`);
+                    if (targetUl) {
+                        targetUl.innerHTML = ''; // Clear loading text
+                        menuItems.forEach(item => {
+                            const li = document.createElement('li');
+                            li.textContent = `- ${item}`;
+                            targetUl.appendChild(li);
+                        });
+                    }
+                    
+                    // Highlight today's menu cells in the weekly table
+                    menuCell.classList.add('bg-indigo-50', 'font-semibold');
+                }
+            });
+
+            // Update the title of the "Today's Menu" section
+            const menuTitle = document.querySelector('#today-menu h2');
+            if(menuTitle) {
+                menuTitle.textContent = `Today's Menu (${todayName})`;
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
+
+
